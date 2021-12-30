@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>NSS Charity</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      body {
+        background-image: url('charityBg.jpg');
+      }
+      a {
+        color: black;
+        text-decoration: underline; 
+      }
+      hr {
+        border-color: black;
+      }
+      table { 
+        background-color: #e6ffff;
+        border-radius: 13px; 
+        border-spacing: 0;
+      }
+      table td, table th { 
+        border-bottom: 1px solid #66c2ff;
+        padding: 10px; 
+      }
+      table tr:last-child > td {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">Dashboard</h1>
+          <hr/>
+          <br/>
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2" scope="col">Your Organization</th>
+                </tr>
+              </thead>
+              <tbody id="candidatesResults">
+              </tbody>
+            </table>
+
+            <form id="formNewOrg" onSubmit="App.addOrg(); return false;">
+                  <div class="form-group col-6">
+                    <h3>Add your Organisation to receive funding</h3>
+                    <label for="candidatesAmt">Enter name</label>
+                      <input type="text" class="form-control" id="newCandName">
+                    <label for="candidatesAmt">Enter Headquarters</label>
+                      <input type="text" class="form-control" id="newCandHQ">
+                    <label for="candidatesAmt">Enter Target</label>
+                      <input type="text" class="form-control" id="newCandTarget">
+                    <label for="candidatesAmt">Enter Agenda</label>
+                      <input type="text" class="form-control" id="newCandAgenda">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Register</button>
+                  <hr />
+            </form>
+
+            
+            <p id="accountAddress" class="text-center"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

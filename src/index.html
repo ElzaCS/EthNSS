@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>NSS Charity</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      body {
+        background-image: url('charityBg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      a {
+        color: black;
+        text-decoration: underline; 
+      }
+      hr {
+        border-color: black;
+      }
+      table { 
+        background-color: #e6ffff;
+        border-radius: 13px; 
+        border-spacing: 0;
+      }
+      table td, table th { 
+        border-bottom: 1px solid #66c2ff;
+        padding: 10px; 
+      }
+      table tr:last-child > td {
+        border-bottom: none;
+      }
+      select {
+        width: 50%;
+      }
+      .custom-select{
+        padding: 2%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="width: 75%;">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-center">NSS Charity Polling</h1>
+          <hr/>
+          <p id="alert"></p>
+          <br/>
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Headquarters</th>
+                  <th scope="col">Target</th>
+                  <th scope="col">Agenda</th>
+                  <th scope="col">Supporters</th>
+                </tr>
+              </thead>
+              <tbody id="candidates">
+              </tbody>
+            </table>
+            <hr/>
+            <p id="voteForm"></p>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <form id="formDonate" onSubmit="App.donate(); return false;">
+                      <div class="form-group col-6">
+                        <h3>Donate to an Organisation</h3>
+                        <!-- /*<div style="display: inline-block">*/ -->
+                          <div>
+                            <label for="candidatesSelect2">Select an Organisation to fund</label>
+                            <select class="form-control" id="candidatesSelect2"></select><!--- --->
+                          </div>
+                          <div>
+                            <label for="candidatesAmt">Enter amount</label>
+                            <input type="text" class="form-control" id="candidatesAmt2">
+                          </div>
+                          <!-- <button type="submit" class="btn btn-primary">Donate</button> -->
+                        <!-- </div> -->
+                      </div>
+                      <button type="submit" class="btn btn-primary">Donate</button>
+                      <hr />
+                </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <form id="formVote" onSubmit="App.castVote(); return false;">
+                      <div class="form-group col-6">
+                        <h3>Report an Organisation</h3>
+                        <h5>Report if you find the organisation suspicious</h5>
+                        <!-- <div style="display: inline-block"> -->
+                          <label for="candidatesSelect1">Select an Organisation to DownVote</label> 
+                          <select class="form-control" id="candidatesSelect1" ></select> <!--- --->
+                          <!-- <button type="submit" class="btn btn-primary">Vote</button> -->
+                        <!-- </div> -->
+                      </div>
+                      <button type="submit" class="btn btn-primary">DownVote</button>
+                      <hr />
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <hr /> -->
+            <p id="accountAddress" class="text-center"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+</script>
+  </body>
+</html>
