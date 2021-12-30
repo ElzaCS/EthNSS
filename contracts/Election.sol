@@ -5,8 +5,8 @@ contract Election {
     struct Candidate {
         uint id;
         string name;
-        string dept; //location
-        string roll; // target
+        string dept; // used as location
+        string roll; // used as target
         string fileLoc;
         string fileHash;
         address accAddress;
@@ -36,13 +36,17 @@ contract Election {
 
     constructor() public {
         caller = caller = msg.sender;
-        addCandidate("The Voice of the Martyrs", "U.S.A.", "Minority Religions", "./files/TheVoice.txt", "665145069", 0x90847b64DcF6e73fdf02081c645d995e4dA1Fa05);
-        addCandidate("Jivdaya Charitable Trust", "Gujarat", "Animal care", "./files/Jivdaya.txt", "-139417957", 0xd370e7d8733eae69CAcc393b5b7B95Ee8FF029e8);
-        addCandidate("Mitti Cafe", "Asia-Pacific", "Person with Disability", "./files/Mitti.txt", "694526058", 0xC5Bdabd2365Af1aEbbC82d908Ab02a0955b9cD6c);
-        addCandidate("Salahuddin Ayyubi Foundation", "Rajasthan", "Health care", "./files/Salahuddin.txt", "-1726948915", 0xbb7DE66AA50085C2d343BDed2D528bE2A41b7DA9);
-        addCandidate("Bala Vikasa International Center", "Andhra Pradesh", "Social Entrepreneurship", "./files/Bala.txt", "-243014348", 0xDf579cCf6947762258DfD0db1A26f471222D81aa);
-        addCandidate("Annamrita Foundation", "Maharashtra", "Rural Children", "./files/Annamrita.txt", "1019967638", 0x4cB65c3279e5A336aAC5834eb267B74508d9f856);
-        addCandidate("Educate Girls", "U.S.A.", "Girls Education", "./files/Educate.txt", "651909930", 0xcB4C53046EaB1F9f8062822181aeCE1B80cd16b5);
+
+        // Replace sampleAddr in each location with required account address
+        address sampleAddr = msg.sender;
+        addCandidate("The Voice of the Martyrs", "U.S.A.", "Minority Religions", "./files/TheVoice.txt", "665145069", sampleAddr);
+        
+        //addCandidate("Jivdaya Charitable Trust", "Gujarat", "Animal care", "./files/Jivdaya.txt", "-139417957", sampleAddr);
+        //addCandidate("Mitti Cafe", "Asia-Pacific", "Person with Disability", "./files/Mitti.txt", "694526058", sampleAddr);
+        //addCandidate("Salahuddin Ayyubi Foundation", "Rajasthan", "Health care", "./files/Salahuddin.txt", "-1726948915", sampleAddr);
+        //addCandidate("Bala Vikasa International Center", "Andhra Pradesh", "Social Entrepreneurship", "./files/Bala.txt", "-243014348", sampleAddr);
+        //addCandidate("Annamrita Foundation", "Maharashtra", "Rural Children", "./files/Annamrita.txt", "1019967638", sampleAddr);
+        //addCandidate("Educate Girls", "U.S.A.", "Girls Education", "./files/Educate.txt", "651909930", sampleAddr);
     }
 
     //function () external payable {}

@@ -182,7 +182,7 @@ App = {
     var target = $('#newCandTarget').val();
     var fileLoc = $('#newCandAgenda').val();
     var fileHash = App.file_get_hash(fileLoc).toString();
-    console.log("add:", orgName, location, target, fileLoc, fileHash);
+    // console.log("add:", orgName, location, target, fileLoc, fileHash);
     App.file_get_hash(fileLoc)
       .then((fileHash) => {
         var fHash = fileHash.toString();
